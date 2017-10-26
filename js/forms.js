@@ -1,52 +1,49 @@
-$(document).ready(function(){
-  var formContent = [];
+$(document).ready(function() {
 
-  /*$("#careerBtn-js").onclick = function() {*/
-$('.main-sections-js').load(currentPage(pagesArr), function () {
-  
-  console.log("we are outside");
+	// Get the form.
+	var form = $('#ajax-contact');
 
+	// Get the messages div.
+	var formMessages = $('#form-messages');
 
-  if(currentPage(pagesArr) === 'careers'){
+	// Set up an event listener for the contact form.
+	$(form).submit(function(e) {
+		// Stop the browser from submitting the form.
+		e.preventDefault();
 
-    console.log("we are inside");
+		// Serialize the form data.
+		var formData = $(form).serialize();
 
-    document.getElementById("careerBtn-js").onclick = function() {
+		// Submit the form using AJAX.
+		$.ajax({
+			type: 'POST',
+			url: $(form).attr('action'),
+			data: formData
+		})
+		.done(function(response) {
+			// Make sure that the formMessages div has the 'success' class.
+			$(formMessages).removeClass('error');
+			$(formMessages).addClass('success');
 
-      console.log("we are deeper inside");
+			// Set the message text.
+			$(formMessages).text(response);
 
-      var userName = $("#user").value;
-      var userEmail = $("#email").value;
-      var userPhoneNumb = $("#phone").value;
-      var bestTime = $("#time").value;
-      var userDescription = $("#description").value;
+			// Clear the form.
+			$('#name, #email, #message, #phone, #time').val('');
+		})
+		.fail(function(data) {
+			// Make sure that the formMessages div has the 'error' class.
+			$(formMessages).removeClass('success');
+			$(formMessages).addClass('error');
 
-      if(userName !== "" && userEmail !== "" && userPhoneNumb !== "" && bestTime !== "" && userDescription !== ""){
-    
-        formContent.push( personalInfo(userName, userEmail, userPhoneNumb, bestTime, userDescription) );
-  
-        userName = "";    
-        userEmail = ""; 
-        userPhoneNumb = "";
-        bestTime = "";
-        userDescription = "";
+			// Set the message text.
+			if (data.responseText !== '') {
+				$(formMessages).text(data.responseText);
+			} else {
+				$(formMessages).text('Oops! An error occured and your message could not be sent.');
+			}
+		});
 
-      }
-    }
-  }; 
-
-  console.log(formContent);
-
-  function personalInfo(userName, userEmail, userPhoneNumb, bestTime, userDescription){
-
-    var jobApplicant = {
-      user: userName,
-      email: userEmail,
-      phone: userPhoneNumb,
-      time: bestTime,
-      description: userDescription
-    };
-    return jobApplicant;
-  }
+	});
 
 });
