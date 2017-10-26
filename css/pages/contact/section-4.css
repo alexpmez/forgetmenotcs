@@ -58,6 +58,12 @@
   font-size: 1.2rem; 
 }
 
+.contact .section-4 .items-2.item-2 .item-2-1 .content {
+  text-align: left;
+  padding-bottom: .7rem;
+  line-height: 1.7rem;
+}
+
 .contact .section-4 .ui.fitted.divider {
   margin-left: auto;
   margin-right: auto;

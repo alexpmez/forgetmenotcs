@@ -59,7 +59,7 @@
     font-style: normal;
 }
 
-font-face {
+@font-face {
   font-family: 'abrilfatfaceregular';
   src: url('../fonts/abril-fatface/abrilfatface-regular/abrilfatface-regular-webfont.eot');
   src: url('../fonts/abril-fatface/abrilfatface-regular/abrilfatface-regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -68,5 +68,26 @@ font-face {
        url('../fonts/abril-fatface/abrilfatface-regular/abrilfatface-regular-webfont.ttf') format('truetype'),
        url('../fonts/abril-fatface/abrilfatface-regular/abrilfatface-regular-webfont.svg#abrilfatfaceregular') format('svg');
   font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'didot-regular';
+  src: url('../fonts/didot-regular/didot-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'didot-italic';
+  src: url('../fonts/didot-italic/didot-italic.ttf') format('truetype');
+  font-weight: italic;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'didot-bold';
+  src: url('../fonts/didot-bold/didot-bold.ttf') format('truetype');
+  font-weight: bold;
   font-style: normal;
 }

@@ -49,6 +49,13 @@
   padding-top: 0 !important;
 }
 
+@media (min-width: 550px) {
+  .about .section-5 .ui.stackable.four.column .column {
+    padding-left: .7rem !important;
+    padding-right: .7rem !important;
+  }
+}
+
 .about .section-5 .ui.card .items {
   margin-left: auto;
   margin-right: auto;
@@ -128,7 +135,7 @@
 
 .about .section-5 .ui.card>.content, .about .section-5 .ui.cards>.card>.content {
   border-top: none;
-  padding: 1rem;
+  padding: 1rem 0 2rem 0;
 }
 
 .about .section-5 .ui.card .meta, .ui.cards>.card .meta {
@@ -137,7 +144,7 @@
   max-width: 230px;
 }
 
-.about .section-5 .ui.card .icon {
+/*.about .section-5 .ui.card .icon {
   color: rgb(91, 141, 219);
   font-size: 3rem;
   padding-bottom: 2rem;
@@ -164,32 +171,92 @@
     padding-bottom: 0;
     padding-top: 3rem;
   }
+}*/
+
+.about .section-5 .ui.card .ui.ribbon.label {
+  background-color: rgb(91, 141, 219) !important;
+  padding-left: .8rem;
+  letter-spacing: .06rem;
+  font-weight: normal;
+}
+
+.ui.blue.ribbon.label {
+  border-color: rgb(76, 117, 181) !important;
+}
+
+.ui.modal>.close {
+  top: 1.0535rem;
+  right: 1rem;
+  color: rgba(0,0,0,.87);
 }
 
 .about .section-5 .ui.card p, .about .section-5 .ui.cards>.card p {
-  line-height: 1.1;
   padding-top: 1rem;
   line-height: 1.5rem;
 }
 
 .about .section-5 .ui.card h3, .about .section-5 .ui.cards>.card h3 {
   color: rgb(89, 90, 110);
-  margin-bottom: 1rem;
   letter-spacing: 1px;
+}
+
+.ui.modal .ui.medium.image, .ui.modal .ui.medium.images .image, .ui.modal .ui.medium.images img, .ui.modal .ui.medium.images svg {
+  min-width: 150px;
+}
+
+@media only screen and (max-width: 500px) {
+  .ui.modal .content>.image {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto!important;
+    text-align: center;
+    padding: 0 0 1rem!important;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .ui.modal .content>.image {
+    display: block;
+    max-width: 40%;
+    margin: 0 auto!important;
+    text-align: center;
+    padding: 0 0 1rem!important;
+  }
+}
+
+.ui.modal .header.name {
+  font-family: "merriweatherregular", serif;
+  font-size: 1.5em;
+  color: rgb(89, 90, 110);
+  letter-spacing: 1px;
+}
+
+.ui.modal .ui.header {
+  text-transform: uppercase;
+  color: rgb(91, 141, 219);
+  font-size: 1rem;
+  margin-top: 0;
+  letter-spacing: .5px;
+}
+
+.ui.modal .ui.info p {
+  font-size: 1em;
+  color: rgba(0,0,0,.4);
 }
 
 .about .section-5 .ui.card .button {
   background-color: rgb(91, 141, 219);
   color: rgb(255, 255, 255);
+  display: block;
   font-family: "OpenSans",sans-serif;
-  font-size: .8rem;
+  font-size: .9rem;
   font-weight: normal;
   letter-spacing: 0.05rem;
-  margin-top: .9rem;
+  margin: .9rem auto 2rem auto;
   padding-bottom: 1.2rem;
   padding-top: 1.2rem;
   text-transform: uppercase;
-  width: 90%;
+  width: 100%;
 }
 
 .about .section-5 .ui.card .button:focus {

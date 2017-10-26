@@ -5,7 +5,6 @@
 .footer.basic.ui.inverted.vertical.segment {
   background-color: rgb(244, 247, 249);
   color: rgb(152, 152, 152);
-  padding-bottom: 5rem;
   padding-top: 1rem;
   text-align: left;
 }
@@ -40,4 +39,13 @@
 
 .footer .ui.stackable .column-1 .inverted.header {
 	margin-top: 0;
+}
+
+.footer .ui.list .item-1 .content:hover {
+  color: rgb(152, 152, 152);
+}
+
+.footer .ui.horizontal .copyright {
+  margin-top: 1rem;
+  text-align: center;
 }

@@ -3,7 +3,9 @@
 @import url("../lib/semantic-UI/components/icon.min.css");
 @import url("../css/units/header.css");
 @import url("../css/units/header-main-section.css");
+@import url("../css/units/header.css");
 @import url("../css/units/footer.css");
+@import url("../css/form.css");
 
 body, html {
   height: auto;
@@ -22,8 +24,9 @@ body {
   background: url(../images/slide-4.jpg);
   background-repeat:no-repeat;
   background-attachment: fixed;
-  background-position: top;
+  background-position: top center;
   background-size: initial;
+  font-size: 1.1rem !important;
 }
 
 @media (min-width: 1000px) {
@@ -95,9 +98,9 @@ body {
   display: none;
 }
 
-.main-sections {
+/*.main-sections {
   display: none;
-}
+}*/
 
 .icons-and-copy {
   cursor: pointer;
