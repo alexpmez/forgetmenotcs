@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <title>Forgetmenotcs</title>
-  <link rel="stylesheet" type="text/css" href="css/main.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <title>Forgetmenotcs</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
   </head>
-  <body class="site home">
+  <body class="site">
     <div class="overlay"></div>
     <div class="background"></div>
     <!-- <div class="background-2"></div> -->
@@ -14,7 +15,7 @@
       <div class="ui menu first-menu">
         <a class="item item-1 first-menu-items-js">
           <i class="call icon"></i>
-          <span>1 (800) 232 3233</span>
+          <span>+44 (0) 7766.610.587</span>
         </a>
         <div class="right menu">
           <a href="mailto:info@forgetmenotcs.co.uk" class="item item-2 first-menu-items-js">
@@ -62,7 +63,7 @@
             </div>
           </div>
             <div class="second-menu-item-3">
-              <button class="ui primary button second-menu-btn"><i class="checked large calendar icon"></i><span>book an appointment</span></button>
+              <button class="ui btn-contact-js primary button second-menu-btn btns-js"><i class="checked large calendar icon"></i><span>book a free consultation today</span></button>
             </div>
           </div>
 
@@ -79,9 +80,9 @@
     </header>
 
     <main class="site-content ui wide center aligned padded">
-      <div class="loading-section loader-js">
+<!--       <div class="loading-section loader-js">
         <div class="ui active centered inline huge loader"></div>
-      </div>
+      </div> -->
       <section class="main-sections main-sections-js">
         <!-- Pages Content -->
       </section>
@@ -119,16 +120,21 @@
             <h4 class="ui inverted header">Get in Touch</h4>
 
               <div class="ui list">
-                <div class="item icons-and-copy item-1 icons-and-copy-js">
+                <div class="item item-1">
+                  <div class="content">
+                    30 Tangier Way, Burgh Heath, KT20 5NB, Surrey, UK
+                  </div>
+                </div>
+                <div class="item icons-and-copy item-2 icons-and-copy-js">
                   <i class="mail icon"></i>
                   <div class="content">
                     <a href="mailto:info@forgetmenotcs.co.uk">info@forgetmenotcs.co.uk</a>
                   </div>
                 </div>
-                <div class="item icons-and-copy item-2 icons-and-copy-js">
+                <div class="item icons-and-copy item-3 icons-and-copy-js">
                   <i class="call icon"></i>
                   <div class="content">
-                    1 (800) 232 3233
+                    +44 (0) 7766.610.587
                   </div>
                 </div>
 
@@ -170,15 +176,64 @@
           </div>
 
         </div>
+
+      <div class="ui horizontal">
+        <div class="copyright">Copyright © <span></span>Forgetmenotcs</div>
+      </div>
+
       </div>
 
     </footer>
 
-    <script type="text/javascript" src="lib/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="lib/semantic-UI/components/dropdown.min.js"></script>
     <script type="text/javascript" src="lib/semantic-UI/semantic.min.js"></script>
     <script type="text/javascript" src="lib/semantic-UI/components/transition.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/header-slider.js"></script>
+
+    <script>
+    function initMap(){
+      // Map options
+      var options = {
+        zoom: 15,
+        center:{ lat: 51.311273, lng: -0.2186331 }
+      }
+
+      // New map
+      var map = new google.maps.Map(document.getElementById('map'), options);
+
+      // Listen for click on map
+      google.maps.event.addListener(map, 'click', function(event){
+        // Add marker
+        addMarker({coords:event.latLng});
+      });
+
+      
+      // Add marker
+      var marker = new google.maps.Marker({
+        position:{ lat: 51.311273, lng: -0.2186331 },
+        map:map,
+        icon: 'http://forgetmenotcs.co.uk/images/marker.png'
+/*        label: {
+            fontFamily: 'Fontawesome',
+            text: '\uf299'
+        }*/
+
+        /*icon:'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png'*/
+      });
+
+      var infoWindow = new google.maps.InfoWindow({
+        content:'<h1>Lynn MA</h1>'
+      });
+
+      marker.addListener('click', function(){
+        infoWindow.open(map, marker);
+      });
+    }
+    </script>
+
+<!--     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBn77f9Z4Wv_7jOtehuTfEO_ghiZsgnRww&callback=initMap"></script> -->
     <!-- <script type="text/javascript" src="js/forms.js"></script> -->
   </body>
 </html>
